@@ -1,3 +1,1 @@
-shell sort  (shellsort1.cpp) containes shell sort from knuth
-in ve USE some numbers in D1 step we ken get high speed sort
-try to change step of for() from s/=2+1 to s/=2
+shellsort  using fibonacci seqence make inxreasing speed  1:5  with fibonaci and without

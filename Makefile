@@ -6,9 +6,9 @@ all:
 	g++ mergeknuth.cpp -o mergeknuth
 	g++ mergeknuth1.cpp -o mergeknuth1
 	g++ shellknuth.cpp -o shellknuth
-	#git apply fib
-	#g++ shellknuth.cpp 	 
-	#git apply unfib
+	git apply fib
+	g++ shellknuth.cpp -o shellknuthfib
+	git apply unfib
 	#compile complite.
 	
 	./base
@@ -19,9 +19,9 @@ all:
 	./mergeknuth
 	./mergeknuth1
 	#wait 5 sec.
-	./a1.out
+	./shellknuth
 	#wain 4 sec.
-	./a.out
+	./shellknuthfib
 push:
 	git add .
 	git commit
