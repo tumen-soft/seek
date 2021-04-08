@@ -19,7 +19,6 @@ using namespace std;
 
 
 
-
 // struct person with 3 fields
 struct person
 {
