@@ -1,7 +1,7 @@
 all:
 	gcc filestruct.c -o base
 	g++ insertknuth.c -o insertknuth
-	g++ quicksort.c  -o quick
+	g++ quickknuth.c  -o quickknuth
 	g++ mergeknuth.cpp -o mergeknuth
 	g++ mergeknuth1.cpp -o mergeknuth1
 	g++ shellknuth.cpp -o shellknuth
@@ -13,7 +13,7 @@ all:
 	./base
 	#wait ten seconds.
 	./insertknuth
-	./quick
+	./quickknuth
 	./mergeknuth
 	./mergeknuth1
 	#wait 5 sec.
