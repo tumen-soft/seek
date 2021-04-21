@@ -20,6 +20,7 @@ all:
 	./shellknuth
 	#wain 4 sec.
 	./shellknuthfib
+
 push:
 	git add .
 	git commit
