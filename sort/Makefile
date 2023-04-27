@@ -1,5 +1,5 @@
 all:
-	gcc bubblesort.c -o bubble
-	gcc countsort.c -o count
-	gcc selectsort.c -o select
-	gcc cocktailsort.c -o cocktail
+	g++ bubblesort.c -o bubble
+	g++ countsort.c -o count
+	g++ selectsort.c -o select
+	g++ cocktailsort.c -o cocktail
