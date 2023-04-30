@@ -13,15 +13,14 @@ all:
 	
 	#wait ten seconds.
 	./bubble
+	./cocktail
 	./count
 	./select
-	./cocktail
 	./insertknuth
 	./quickknuth
+	./shellknuth
 	./mergeknuth
 	./mergeknuth1
-	#wait 5 sec.
-	./shellknuth
 
 push:
 	git add .

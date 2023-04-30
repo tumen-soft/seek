@@ -25,12 +25,6 @@ void printArray(int A[], int size)
                 cout << A[i] << " ";
 }
 
-struct person
-{
-	int id;
-	char fname[20];
-	char lname[20];
-};
 
 // Driver program
 int main ()
