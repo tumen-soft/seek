@@ -12,11 +12,11 @@
 #include <stdlib.h>
 //#include <mysql.h>
 #include <iostream>
-#include <vector>
+//#include <vector>
 #include <string>
 #include <vector>
 #include <stack>
-
+#include "logdur.h"
 
 using namespace std;
 void printArray(int A[], int size)
@@ -35,31 +35,17 @@ struct person
 // Driver program
 int main ()
 {
-	FILE *infile;
-	struct person input, key;//arr[4000], key;
-int e=0, arr[80000];
-        clock_t t;
-        t = clock();
-
-
-
-	// Open person.dat for reading
-	infile = fopen ("person.dat", "r");
-	if (infile == NULL)
-	{
-		fprintf(stderr, "\nError opening file\n");
-		exit (1);
-	}
-
-	// read file contents till end of file
-	while(fread(&input, sizeof(struct person), 1, infile)) {
-
-  arr[e]=input.id;
-
-  e++;
-  }
-	// close file
+                      int arr[40000]={0}, key;
+        for(int i=0;i<40000;i++)
+                arr[i]=rand();
        int n = sizeof(arr) / sizeof(arr[0]);
+
+
+        // Open person.dat for reading
+
+        {
+        LogDuration ld("mergesort");
+
 
 
 int s,i,j,k,l,d,f,o;
@@ -93,12 +79,7 @@ N13:;if(f==0){s=1-s;goto N2;}else goto END;
      if(s==0)for(int p=n/2;p<=n;p++)arr[p-n/2]=arr[p];
 END:;
 
-
-        t = clock() - t;
-
-//printArray(arr,40000);
-
-   printf (" time : %ld clicks (%f seconds).\n",t,((double)t)/CLOCKS_PER_SEC);
+	}
 
         return 0;
 }

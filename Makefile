@@ -1,25 +1,27 @@
 all:
-	gcc filestruct.c -o base
 	g++ insertknuth.c -o insertknuth
 	g++ quickknuth.c  -o quickknuth
-	g++ mergeknuth.cpp -o mergeknuth
+	g++ mergeknuth.cpp -o mergeknuth -fno-stack-protector 
 	g++ mergeknuth1.cpp -o mergeknuth1
 	g++ shellknuth.cpp -o shellknuth
-	git apply fib
-	g++ shellknuth.cpp -o shellknuthfib
-	git apply unfib
+	g++ bubblesort.c -o bubble
+	g++ countsort.c -o count
+	g++ selectsort.c -o select
+	g++ cocktailsort.c -o cocktail
+
 	#compile complite.
 	
-	./base
 	#wait ten seconds.
+	./bubble
+	./count
+	./select
+	./cocktail
 	./insertknuth
 	./quickknuth
 	./mergeknuth
 	./mergeknuth1
 	#wait 5 sec.
 	./shellknuth
-	#wain 4 sec.
-	./shellknuthfib
 
 push:
 	git add .

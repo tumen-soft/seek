@@ -21,6 +21,7 @@
 //#include <mysqlx/xdevapi.h>
 //using namespace mysqlx;
 #include <chrono>
+#include "logdur.h"
 
 
 
@@ -31,41 +32,24 @@
 
 
 
-
-struct person
-{
-	int id;
-	char fname[20];
-	char lname[20];
-};
 
 // Driver program
 int main ()
 {
-	FILE *infile;
-	struct person input, arr[40000], key;
+        int arr[50000]={0}, key;
 int k=0;
-        clock_t t;
-
-        t = clock();
-
+        for(int i=0;i<50000;i++)
+                arr[i]=rand();
 
 
-	// Open person.dat for reading
-	infile = fopen ("person.dat", "r");
-	if (infile == NULL)
-	{
-		fprintf(stderr, "\nError opening file\n");
-		exit (1);
-	}
+        // Open person.dat for reading
 
-	// read file contents till end of file
-	while(fread(&input, sizeof(struct person), 1, infile)) {
+        {
+        LogDuration ld("quicksort");
 
-  arr[k]=input;
 
-  k++;
-  }
+
+
 	// close file
        int n = sizeof(arr) / sizeof(arr[0]);
 
@@ -73,9 +57,9 @@ std::stack<std::pair<int,int>> s2,s;
 int l,r,i,j,K;
 Q1:;s.push(std::make_pair(0,n));
 Q1a:;if(!s.empty()){l=s.top().first;r=s.top().second;s.pop();}
-  Q2:;i=l;j=r;K=arr[(j-i)/2+i].id;
-    Q3:;if(arr[i].id-K<0){i++;goto Q3;}
-    Q4:;if(arr[j].id-K>0){j--;goto Q4;}
+  Q2:;i=l;j=r;K=arr[(j-i)/2+i];
+    Q3:;if(arr[i]-K<0){i++;goto Q3;}
+    Q4:;if(arr[j]-K>0){j--;goto Q4;}
     Q5:;
     Q6:;if(i-j<=0){std::swap(arr[i],arr[j]);i++;j--;}
     Q6a:;if(i<=j)goto Q3;
@@ -108,9 +92,6 @@ Q8:;if(!s.empty()) goto Q1a;
 
 
 
-        t = clock() - t;
-
-	printf (" time : %ld clicks (%f seconds).\n",t,((double)t)/CLOCKS_PER_SEC);
-
+	}
 	return 0;
 }

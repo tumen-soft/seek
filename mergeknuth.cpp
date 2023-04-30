@@ -11,11 +11,11 @@
 #include <stdlib.h>
 //#include <mysql.h>
 #include <iostream>
-#include <vector>
+//#include <vector>
 #include <string>
 #include <vector>
 #include <stack>
-
+#include "logdur.h"
 
 
 using namespace std;
@@ -113,95 +113,28 @@ void mergeSort(int arr[],int l,int r){
 
 
 
-struct person
-{
-	int id;
-	char fname[20];
-	char lname[20];
-};
 
 // Driver program
 int main ()
 {
-	FILE *infile;
-	struct person input, key;//arr[4000], key;
-int k=0, arr[40000];
-        clock_t t;
-        t = clock();
 
 
 
-	// Open person.dat for reading
-	infile = fopen ("person.dat", "r");
-	if (infile == NULL)
-	{
-		fprintf(stderr, "\nError opening file\n");
-		exit (1);
-	}
-
-	// read file contents till end of file
-	while(fread(&input, sizeof(struct person), 1, infile)) {
-
-  arr[k]=input.id;
-
-  k++;
-  }
-	// close file
+	       int arr[40000]={0}, key;
+        for(int i=0;i<40000;i++)
+                arr[i]=rand();
        int n = sizeof(arr) / sizeof(arr[0]);
 
-/*
-int arr1[n/2];
-for(int i=0;i<n/2;i++)
-	arr1[i]=arr[i];
-int arr2[n/2];
-for (int i = n/2;i<4000;i++)
-	arr2[i-n/2]=arr[i];
-*/
 
+        // Open person.dat for reading
 
-
-
+        {
+        LogDuration ld("mergesort");
 
 
 
 mergeSort(arr, 0, n);
 
-
-
-
-
-
-
-
-
-
-
-/*
-
-M1:;int i=1,j=1;k=1;
-M2:;if(arr1[i]>=arr2[j])goto M5;
-M3:;arr[k]=arr1[i];k++;i++;if(i<=n/2)goto M2;
-M4:;for(int l=j;l<=n/2;l++){arr[k]=arr2[l];k++;}goto END;
-M5:;arr[k]=arr2[j];k++;i++;if(j<=n/2)goto M2;
-M6:;for(int l=i;l<=n/2;l++){arr[k]=arr1[l];k++;}
-END:;
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-        t = clock() - t;
-
-   printf (" time : %ld clicks (%f seconds).\n",t,((double)t)/CLOCKS_PER_SEC);
-
-        return 0;
+	}
+       return 0;
 }
