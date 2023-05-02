@@ -9,4 +9,12 @@ class A{
 
 
 };
-
+template<typename T>
+class A{
+	public:
+		A(T&& t)
+		:b_(std::forward<T>(t))
+		{}
+	private:
+		B b_;
+};
