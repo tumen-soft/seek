@@ -1,10 +1,10 @@
 class M{
- int A;
+class A{
+int x;
+};
 
 };
-B:M{
-
-};
+B:M{};
 int main(){
 
 B b;
