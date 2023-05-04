@@ -2,13 +2,14 @@
 class B{
 	//std::string intim;
 	public:
-	B(std::string shashlik):intim{shashlik}{}
+	B(std::string shashlik, std::string nashinal):intim{shashlik}, nashinal{nashinal}{}
 	private:
 	std::string intim;
+	std::string nashinal;
 };
 int main(){
 
-	B b{"b"};
+	B b{"korova","lizgin"};
 
 return 0;
 }
