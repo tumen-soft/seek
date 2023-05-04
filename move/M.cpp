@@ -4,7 +4,7 @@ int x;
 };
 
 };
-B:M{};
+class B:M{};
 int main(){
 
 B b;

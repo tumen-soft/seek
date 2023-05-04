@@ -3,9 +3,10 @@
 #include <iostream>
 using namespace std;
 struct Person{
-	Person(const string& name){_name=name;};
+	public:
+	Person(const string& name):_name{name}{}
 	//template<typename T> Person(T&& nam){_name=nam;};
-	string _name="test";
+	string _name;
 };
 int main(){
 
@@ -14,6 +15,6 @@ string name="Herb";
 Person p2(name);
 
 Person p3(p1);
-cout<< p3._name<<endl;
+cout<< Person{p1}._name<<endl;
 return 0;
 }

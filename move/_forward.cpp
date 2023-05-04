@@ -18,8 +18,6 @@ struct _integral_constant
 };
 
   using _true_type =  _integral_constant<bool, true>;
-
-  /// The type used as a compile-time boolean with false value.
   using _false_type = _integral_constant<bool, false>;
 
 
@@ -80,9 +78,9 @@ int main()
     int i = 0;
     foo(i); // lvalue: T - int&, p - int&
     foo(0); // rvalue: T - int, p - int&&
-    typedef std::integral_constant<int, 2> two_t;
-    typedef std::integral_constant<int, 4> four_t;
- 
+    typedef _integral_constant<int, 2> two_t;
+    typedef _integral_constant<int, 4> four_t;
+    	 
     static_assert(not std::is_same<two_t, four_t>::value, "two_t and four_t are equal!");
 	
 }
