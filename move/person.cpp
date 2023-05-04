@@ -5,6 +5,7 @@ using namespace std;
 struct Person{
 	public:
 	Person(const string& name):_name{name}{}
+	Person(Person& p):_name{p._name}{}
 	//template<typename T> Person(T&& nam){_name=nam;};
 	string _name;
 };
