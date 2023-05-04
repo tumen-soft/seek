@@ -1,10 +1,10 @@
 #include <string>
 class B{
-	std::string intim;
+	//std::string intim;
 	public:
 	B(std::string shashlik):intim{shashlik}{}
-	//private:
-	//std::string intim;
+	private:
+	std::string intim;
 };
 int main(){
 
