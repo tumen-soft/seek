@@ -1,4 +1,4 @@
 all:
-	g++ person.cpp
-	#output: Bjarne
+	g++ move.cpp
+	#output: 7
 	./a.out	
