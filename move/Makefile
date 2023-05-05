@@ -1,4 +1,4 @@
 all:
 	g++ move1.cpp
-	#output: 7
+	#output:5 4 
 	./a.out	

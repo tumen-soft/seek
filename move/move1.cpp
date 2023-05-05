@@ -1,12 +1,13 @@
-#include <iomanip>
 #include <iostream>
 #include <utility>
-#include <string>
-int func(auto u){return *(std::move(u));}; 
+int func(auto u){int j(u);int *h(&j);u=4;return std::move(j);}; 
 
 int main()
 {
-    //int i(5);
-    while(true)	
-    std::cout<<func(new int(std::forward<int>(5)))<<std::endl;
+    int i(5);
+//    while(true)	
+    std::cout<<func((std::forward<int&>(i)))<<std::endl;
+    std::cout<<func((std::forward<int&>(i)))<<std::endl;
+	
+
 }
