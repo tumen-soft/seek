@@ -1,11 +1,6 @@
 #include <iostream>
 
 using namespace std;
-class A{
-	using val=int;
-	operator val(){};
-
-};
 
 template<class T, T v>
 struct _integral_constant
@@ -70,12 +65,12 @@ void foo(T&& p)
 {
     bar(p);
     bar(_move(p));
-    bar(_forward<T>(p));
+    bar(_forward<char>(p));
 }
 
 int main()
 {
-    int i = 0;
+    int i{0};
     foo(i); // lvalue: T - int&, p - int&
     foo(0); // rvalue: T - int, p - int&&
     typedef _integral_constant<int, 2> two_t;

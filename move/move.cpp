@@ -3,7 +3,7 @@
 #include <utility>
 #include <vector>
 #include <string>
-int func(auto u){return *(u);}; 
+int func(auto u){return *(std::move(u));}; 
 
 int main()
 {

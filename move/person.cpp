@@ -20,6 +20,6 @@ string name="Herb";
 Person p2(name);
 
 Person p3(p1);
-cout<< Person{p1};//<<endl;
+cout<< Person{p2};//<<endl;
 return 0;
 }
