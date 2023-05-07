@@ -15,6 +15,7 @@ struct Person{
 };
 int main(){
 
+	
 Person p1("Bjarne");
 string name="Herb";
 Person p2(name);
