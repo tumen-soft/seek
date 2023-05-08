@@ -1,4 +1,4 @@
 all:
-	g++ move1.cpp -fpermissive
-	#output:3 5 4 
+	g++ book.cpp -fpermissive
+	#output: 
 	./a.out	
