@@ -10,12 +10,12 @@ public:
   std::string author() const { return author_; }
 };
 
-int add_to_library(const Book){};
+int add_to_library(const Book){return 0;};
 
 
 int main(){
 
-//Book mybook = { "Hamlet", "Shakespeare" };
+Book mybook = { "Hamlet", "Shakespeare" };
 add_to_library({"Hamlet", "Shakespeare"});
 
 return 0;
