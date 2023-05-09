@@ -1,4 +1,4 @@
 all:
-	g++ book.cpp -fpermissive
+	g++ shapes.cpp -fpermissive
 	#output: 
 	./a.out	
