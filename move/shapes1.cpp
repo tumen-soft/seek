@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include <variant>
 class Vector2D{};
 
 enum ShapeType{
@@ -40,11 +41,11 @@ void translate(Square&, Vector2D const&);
 void rotate(Square&, Vector2D const&);
 //void Square::draw(){std::cout<<"drawing square"<<std::endl;};
 
-void drawAllShapes(std::vector<std::unique_ptr<Shape>> const& shapes)
+void drawAllShapes(std::vector<std::variant<std::unique_ptr<Shape>>> const& shapes)
 {
 	for(auto const& s:shapes)
 	{
-		s->draw();
+	std::visit([](auto&& arg){arg->draw();}, s);
 
 	}
 
@@ -52,7 +53,7 @@ void drawAllShapes(std::vector<std::unique_ptr<Shape>> const& shapes)
 
 }
 int main(){
-	using Shapes = std::vector<std::unique_ptr<Shape>>;
+	using Shapes = std::vector<std::variant<std::unique_ptr<Shape>>>;
 
 	Shapes shapes;
 	shapes.emplace_back(std::make_unique<Circle>(2.0));
