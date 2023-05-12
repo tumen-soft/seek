@@ -44,11 +44,7 @@ void rotate(Square&, Vector2D const&);
 void drawAllShapes(std::vector<std::variant<std::unique_ptr<Shape>>> const& shapes)
 {
 	for(auto const& s:shapes)
-	{
 	std::visit([](auto&& arg){arg->draw();}, s);
-
-	}
-
 
 
 }
