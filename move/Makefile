@@ -1,5 +1,5 @@
 all:
-	g++ overload.cpp	
+	g++ uniq_ptr.cpp	
 	#output: 
 	./a.out
 	
