@@ -1,5 +1,5 @@
 all:
-	g++ move1.cpp	
-	#output:5 4 
+	g++ overload.cpp	
+	#output: 
 	./a.out
 	
