@@ -1,5 +1,5 @@
 all:
-	g++ uniq_ptr.cpp	
+	g++ builder1.cpp	
 	#output: 
 	./a.out
 	
