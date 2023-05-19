@@ -5,25 +5,20 @@ class HousePlan
 {
 	public: 
 	void setBasement(string basement);
-
 	void setStructure(string structure);
-
 	void setRoof(string roof);
-
 	void setInterior(string interior);
 };
 
-class House : HousePlan
+class House : public HousePlan
 {
-
 	private: 
-		string basement;
-	 string structure;
-	 string roof;
+	string basement;
+	string structure;
+	string roof="wood";
 	string interior;
 
 	public: 
-	House(){};
 	void setBasement(string basement)
 	{
 		this->basement = basement;
@@ -44,22 +39,27 @@ class House : HousePlan
 		this->interior = interior;
 	}
 
+	string getRoof(){
+		return this->roof;
+	}
+
+	House(){};
 };
 
 
-class HouseBuilder
+class HouseBuilder : public House
 {
 
 	public: 
-		void buildBasement(){};
+	 virtual void buildBasement()=0;
 
-	 void buildStructure(){};
+	 virtual void buildStructure()=0;
 
-	 void buildRoof(){};
+	 virtual void buildRoof()=0;
 
-	 void buildInterior(){};
+	 virtual void buildInterior()=0;
 
-	 House* getHouse(){return 7;};
+	 virtual House* getHouse()=0;
 };
 
 class IglooHouseBuilder : public HouseBuilder
@@ -173,7 +173,7 @@ int main()
 
 		House* house = (*engineer).getHouse();
 
-		cout<<"Builder constructed: "<< house << endl;
+		cout<<"Builder constructed: "<< house->getRoof() << endl;
 
 return 0;
 }
