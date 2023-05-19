@@ -1,5 +1,5 @@
 all:
-	g++ builder1.cpp	
+	g++ builder1.cpp -fpermissive	
 	#output: 
 	./a.out
 	

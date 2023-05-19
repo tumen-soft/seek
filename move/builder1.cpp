@@ -59,7 +59,7 @@ class HouseBuilder
 
 	 void buildInterior(){};
 
-	 House* getHouse(){return 0;};
+	 House* getHouse(){return 7;};
 };
 
 class IglooHouseBuilder : public HouseBuilder
@@ -173,7 +173,7 @@ int main()
 
 		House* house = (*engineer).getHouse();
 
-		cout<<"Builder constructed: "<< endl;
+		cout<<"Builder constructed: "<< house << endl;
 
 return 0;
 }
