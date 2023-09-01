@@ -120,8 +120,8 @@ int main ()
 
 
 
-	       int arr[40000]={0}, key;
-        for(int i=0;i<40000;i++)
+	       int arr[50000]={0}, key;
+        for(int i=0;i<50000;i++)
                 arr[i]=rand();
        int n = sizeof(arr) / sizeof(arr[0]);
 
