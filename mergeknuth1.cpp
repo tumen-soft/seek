@@ -29,8 +29,8 @@ void printArray(int A[], int size)
 // Driver program
 int main ()
 {
-                      int arr[40000]={0}, key;
-        for(int i=0;i<40000;i++)
+                      int arr[50000]={0}, key;
+        for(int i=0;i<50000;i++)
                 arr[i]=rand();
        int n = sizeof(arr) / sizeof(arr[0]);
 
@@ -74,6 +74,11 @@ N13:;if(f==0){s=1-s;goto N2;}else goto END;
 END:;
 
 	}
+
+	printArray(arr, 50000);
+
+
+
 
         return 0;
 }
