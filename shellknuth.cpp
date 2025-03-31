@@ -15,7 +15,7 @@ int main(){
 //int n = 110031;
 
 
-        int arr[40000]={0}, key;
+        int  key;
         for(int i=0;i<40000;i++)
                 arr[i]=rand();
 

@@ -1,6 +1,22 @@
 #include <iostream>
 #include <chrono>
 
+
+
+        int arr[50000] = {0};
+        int n = sizeof(arr)/sizeof(arr[0]);
+//        for(int i=0;i<50000;i++)
+//                arr[i]=rand();
+
+
+
+
+
+
+
+
+
+
 class LogDuration {
 public:
     LogDuration(std::string id)

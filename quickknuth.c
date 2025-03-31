@@ -36,7 +36,7 @@
 // Driver program
 int main ()
 {
-        int arr[50000]={0}, key;
+        int key;
 int k=0;
         for(int i=0;i<50000;i++)
                 arr[i]=rand();
